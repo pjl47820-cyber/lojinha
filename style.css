@@ -1,0 +1,218 @@
+/* Reset e base */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #fdf6ec;
+    color: #555;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #f8d7da;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #e6d6f5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover { background: #cfe8d5; }
+
+.btn-admin {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: #e9e093;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e9e093;
+}
+
+.btn-admin:hover {
+    background: #e9e093;
+    transform: scale(1.15) rotate(90deg);
+    box-shadow: 0 5px 15px rgba(253, 216, 53, 0.4);
+}
+
+/* Catalogo */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+.produto {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.produto:hover { transform: translateY(-5px); }
+
+.produto img { width: 100%; border-radius: 15px; }
+
+.produto button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #f8d7da;
+    cursor: pointer;
+    width: 100%;
+}
+
+.produto button:hover { background: #e6d6f5; }
+
+/* Carrinho fixo */
+.carrinho {
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #e6d6f5;
+    padding: 12px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+/* Painel carrinho */
+.painel-carrinho {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: 0.4s;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.painel-carrinho.ativo { right: 0; }
+
+.painel-carrinho h3 { margin-top: 0; }
+
+.btn-remover {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-remover:hover { background-color: #cc0000; }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img { max-width: 90%; border-radius: 15px; }
+
+/* Responsivo */
+@media (max-width: 100%) {
+    header { flex-direction: column; text-align: center; }
+    nav { justify-content: center; gap: 5px; margin-top: 10px; }
+    .catalogo { grid-template-columns: 1fr; padding: 15px; gap: 15px; }
+    .produto button { width: 100%; }
+    .painel-carrinho { width: 100%; right: -100%; }
+    .painel-carrinho.ativo { right: 0; }
+    .carrinho { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 16px; }
+}
+#finalizarPedidoBtn {
+    background-color: #4CAF50; /* Verde agradável */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    text-align: center;
+}
+
+#finalizarPedidoBtn:hover {
+    background-color: #45a049; /* Verde mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+#fecharCarrinhoBtn {
+    background-color: #e03e39; /* Verde agradável */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 50%;
+    text-align: center;
+
+}
+footer {
+    background-color: #f8d7da;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #555;
+    margin-top: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}

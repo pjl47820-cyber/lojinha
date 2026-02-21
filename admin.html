@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Administrativo - Mãos de Fada</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="container-admin">
+    
+    <header class="admin-header">
+        <div>
+            <h1>🛠️ Painel Administrativo</h1>
+            <p>Gerencie os produtos da sua loja</p>
+        </div>
+        <a href="index.html" class="btn-voltar">← Voltar para o Site</a>
+    </header>
+
+    <div class="admin-grid">
+        
+        <!-- FORMULÁRIO PARA ADICIONAR PRODUTO -->
+        <section class="card">
+            <h2>➕ Adicionar Novo Produto</h2>
+            <form id="formProduto">
+                
+                <div class="form-group">
+                    <label>Nome do Produto:</label>
+                    <input type="text" id="nomeProduto" placeholder="Ex: Caneca Personalizada" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Preço (R$):</label>
+                    <input type="number" id="precoProduto" step="0.01" min="0" placeholder="Ex: 25.50" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Categoria:</label>
+                    <select id="categoriaProduto" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="caneca">Caneca</option>
+                        <option value="caixa-padrinho">Caixa Padrinho</option>
+                        <option value="quadro">Quadro</option>
+                        <option value="adesivo">Adesivo</option>
+                        <option value="centro-mesa">Centro de Mesa</option>
+                        <option value="pegue-monte-cavalete">Pegue e Monte</option>
+                        <option value="nova">➕ Nova Categoria</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="novaCategoriaGroup" style="display:none;">
+                    <label>Nome da Nova Categoria:</label>
+                    <input type="text" id="novaCategoria" placeholder="Ex: chaveiro">
+                    <small>Use apenas letras minúsculas e hífens (sem espaços)</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Imagens do Produto:</label>
+                    <input type="file" id="imagensProduto" accept="image/*" multiple>
+                    <small>📸 Clique para selecionar uma ou mais fotos da galeria</small>
+                    <div id="previewImagens" class="preview-container"></div>
+                </div>
+
+                <button type="submit" class="btn-adicionar">➕ Adicionar Produto</button>
+            </form>
+        </section>
+
+        <!-- LISTA DE PRODUTOS CADASTRADOS -->
+        <section class="card">
+            <h2>📦 Produtos Cadastrados (<span id="totalProdutos">0</span>)</h2>
+            <div id="listaProdutos" class="lista-produtos">
+                <!-- Produtos serão inseridos aqui -->
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

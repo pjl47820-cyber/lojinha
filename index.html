@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mãos de Fada</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="imagen.jpeg" alt="Mão de Fada">
+        <h1>Mãos de Fada</h1>
+    </div>
+    <nav>
+        <button onclick="filtrar('todos')">Todos</button>
+        <button onclick="filtrar('caneca')">Caneca</button>
+        <button onclick="filtrar('caixa-padrinho')">Caixa Padrinho</button>
+        <button onclick="filtrar('quadro')">Quadros</button>
+        <button onclick="filtrar('adesivo')">Adesivo</button>
+        <a href="admin.html" class="btn-admin" title="Painel Administrativo">⚙️</a>
+    </nav>
+</header>
+
+<!-- Catálogo de Produtos (carregado dinamicamente) -->
+<section class="catalogo" id="catalogo">
+    <!-- Os produtos serão inseridos aqui automaticamente pelo JavaScript -->
+</section>
+
+<!-- Modal para ampliar imagens -->
+<div id="modal" class="modal" onclick="fecharModal()">
+    <img id="imagemModal" alt="Imagem ampliada">
+</div>
+
+<!-- Carrinho Flutuante -->
+<div class="carrinho" id="botaoCarrinho">
+    🛒 <span id="contador">0</span>
+</div>
+
+<!-- Painel do Carrinho -->
+<div id="painelCarrinho" class="painel-carrinho">
+    <button id="fecharCarrinhoBtn">✖ Fechar</button>
+    <h3>Seu Carrinho</h3>
+    <ul id="listaCarrinho"></ul>
+    <p id="totalCarrinho">Total: R$ 0,00</p>
+    <button id="finalizarPedidoBtn">Finalizar Pedido</button>
+</div>
+
+<footer>
+    <p>© Desde 2023 Mão de Fada - Alto padrão em cada detalhe</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
